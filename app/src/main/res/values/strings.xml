@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Mzansi Campus Hub</string>
+
+    <!-- Login screen -->
+    <string name="title_login">Mzansi Campus Hub - Login</string>
+    <string name="hint_email">Email Address</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_go_to_register">Go to Register</string>
+    <string name="msg_login_success">Login Successful!</string>
+    <string name="msg_login_no_account">No account found. Please register first.</string>
+    <string name="msg_login_invalid">Invalid email or password. Please try again.</string>
+
+    <!-- Register screen -->
+    <string name="title_register">Create Your Mzansi Campus Hub Account</string>
+    <string name="btn_register">Register</string>
+
+    <!-- Main / Events feed screen -->
+    <string name="title_events_feed">Mzansi Campus Hub - Events Feed</string>
+    <string name="btn_logout">Logout</string>
+    <string name="btn_settings">Settings</string>
+    <string name="msg_logged_out">Logged out</string>
+    <string name="msg_failed_to_load_events">Failed to load events</string>
+
+    <!-- Event detail screen -->
+    <string name="title_event_detail">Event Details</string>
+    <string name="btn_back">Back</string>
+
+    <!-- Settings screen -->
+    <string name="title_settings">Settings</string>
+    <string name="label_dark_mode">Dark Mode</string>
+    <string name="label_language">Language</string>
+    <string name="language_english">English</string>
+    <string name="language_afrikaans">Afrikaans</string>
+
+
+</resources>

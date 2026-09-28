@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Mzansi Campus Hub</string>
+
+    <!-- Aanmeld-skerm -->
+    <string name="title_login">Mzansi Campus Hub - Meld Aan</string>
+    <string name="hint_email">E-posadres</string>
+    <string name="hint_password">Wagwoord</string>
+    <string name="btn_login">Meld Aan</string>
+    <string name="btn_go_to_register">Gaan na Registreer</string>
+    <string name="msg_login_success">Suksesvol Aangemeld!</string>
+    <string name="msg_login_no_account">Geen rekening gevind nie. Registreer asseblief eers.</string>
+    <string name="msg_login_invalid">Ongeldige e-pos of wagwoord. Probeer asseblief weer.</string>
+
+    <!-- Registrasie-skerm -->
+    <string name="title_register">Skep Jou Mzansi Campus Hub-rekening</string>
+    <string name="btn_register">Registreer</string>
+
+    <!-- Hoof- / gebeurtenis-voer-skerm -->
+    <string name="title_events_feed">Mzansi Campus Hub - Gebeurtenisvoer</string>
+    <string name="btn_logout">Meld Af</string>
+    <string name="btn_settings">Instellings</string>
+    <string name="msg_logged_out">Afgemeld</string>
+    <string name="msg_failed_to_load_events">Kon nie gebeurtenisse laai nie</string>
+
+    <!-- Gebeurtenisbesonderhede-skerm -->
+    <string name="title_event_detail">Gebeurtenisbesonderhede</string>
+    <string name="btn_back">Terug</string>
+
+    <!-- Instellings-skerm -->
+    <string name="title_settings">Instellings</string>
+    <string name="label_dark_mode">Donker Modus</string>
+    <string name="label_language">Taal</string>
+    <string name="language_english">Engels</string>
+    <string name="language_afrikaans">Afrikaans</string>
+</resources>

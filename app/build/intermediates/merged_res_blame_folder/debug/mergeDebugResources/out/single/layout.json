@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.mzansi.campushub.app-mergeDebugResources-33:/layout/item_campus_event.xml",
+        "source": "com.mzansi.campushub.app-main-36:/layout/item_campus_event.xml"
+    },
+    {
+        "merged": "com.mzansi.campushub.app-mergeDebugResources-33:/layout/activity_login.xml",
+        "source": "com.mzansi.campushub.app-main-36:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.mzansi.campushub.app-mergeDebugResources-33:/layout/activity_settings.xml",
+        "source": "com.mzansi.campushub.app-main-36:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "com.mzansi.campushub.app-mergeDebugResources-33:/layout/activity_main.xml",
+        "source": "com.mzansi.campushub.app-main-36:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.mzansi.campushub.app-mergeDebugResources-33:/layout/activity_register.xml",
+        "source": "com.mzansi.campushub.app-main-36:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.mzansi.campushub.app-mergeDebugResources-33:/layout/activity_event_detail.xml",
+        "source": "com.mzansi.campushub.app-main-36:/layout/activity_event_detail.xml"
+    }
+]
