@@ -1,58 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundDark"
     android:orientation="vertical"
-    android:padding="16dp"
-    tools:context=".MainActivity">
+    android:padding="16dp">
 
+    <!-- Top Header Layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:layout_marginBottom="16dp">
+        android:orientation="horizontal"
+        android:paddingBottom="12dp">
 
         <TextView
-            android:id="@+id/tvFeedHeader"
+            android:id="@+id/headerTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/title_events_feed"
+            android:text="Mzansi Campus Hub"
+            android:textColor="@color/textPrimary"
             android:textSize="22sp"
             android:textStyle="bold" />
 
-        <Button
+        <TextView
             android:id="@+id/btnSettings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_settings"
-            style="?attr/borderlessButtonStyle" />
-
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp"
+            android:text="SETTINGS"
+            android:textColor="@color/secondary"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tvFeedStatus"
+        android:id="@+id/eventCount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="13sp"
-        android:layout_marginBottom="8dp" />
+        android:paddingBottom="8dp"
+        android:text="Live Campus Events"
+        android:textColor="@color/textSecondary"
+        android:textSize="14sp" />
 
+    <!-- RecyclerView Feed -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvCampusEvents"
+        android:id="@+id/recyclerViewEvents"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:clipToPadding="false"
-        tools:listitem="@layout/item_campus_event" />
+        android:paddingBottom="12dp" />
 
+    <!-- Logout Button -->
     <Button
         android:id="@+id/btnLogout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_logout"
-        android:layout_marginTop="16dp" />
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/primary"
+        android:text="LOGOUT"
+        android:textColor="@color/textPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        style="?attr/materialButtonOutlinedStyle" />
 
 </LinearLayout>
