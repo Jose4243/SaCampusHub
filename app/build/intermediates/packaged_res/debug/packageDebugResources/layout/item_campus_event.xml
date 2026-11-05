@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardBackgroundColor="@color/cardBackground"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/eventThumbnail"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center_vertical"
+            android:background="@android:drawable/ic_menu_compass"
+            android:backgroundTint="@color/secondary"
+            android:scaleType="centerCrop"
+            android:contentDescription="Event Image" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvEventTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Campus Hackathon 2026"
+                android:textColor="@color/textPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvEventDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="2026-10-15"
+                android:textColor="@color/secondary"
+                android:textSize="12sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/tvEventDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Join the 24-hour student coding challenge!"
+                android:textColor="@color/textSecondary"
+                android:textSize="14sp"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

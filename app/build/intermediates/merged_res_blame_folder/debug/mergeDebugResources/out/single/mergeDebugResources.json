@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "com.mzansi.campushub.app-debug-31:/drawable_event_hackathon.jpg.flat",
+        "source": "com.mzansi.campushub.app-main-33:/drawable/event_hackathon.jpg"
+    },
+    {
+        "merged": "com.mzansi.campushub.app-debug-31:/drawable_event_arts.jpg.flat",
+        "source": "com.mzansi.campushub.app-main-33:/drawable/event_arts.jpg"
+    },
+    {
+        "merged": "com.mzansi.campushub.app-debug-31:/layout_activity_login.xml.flat",
+        "source": "com.mzansi.campushub.app-main-33:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.mzansi.campushub.app-debug-31:/drawable_event_party.jpg.flat",
+        "source": "com.mzansi.campushub.app-main-33:/drawable/event_party.jpg"
+    },
+    {
+        "merged": "com.mzansi.campushub.app-debug-31:/layout_activity_settings.xml.flat",
+        "source": "com.mzansi.campushub.app-main-33:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "com.mzansi.campushub.app-debug-31:/layout_activity_event_detail.xml.flat",
+        "source": "com.mzansi.campushub.app-main-33:/layout/activity_event_detail.xml"
+    },
+    {
+        "merged": "com.mzansi.campushub.app-debug-31:/drawable_event_career.jpg.flat",
+        "source": "com.mzansi.campushub.app-main-33:/drawable/event_career.jpg"
+    },
+    {
+        "merged": "com.mzansi.campushub.app-debug-31:/layout_activity_main.xml.flat",
+        "source": "com.mzansi.campushub.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.mzansi.campushub.app-debug-31:/drawable_event_workshop.jpg.flat",
+        "source": "com.mzansi.campushub.app-main-33:/drawable/event_workshop.jpg"
+    },
+    {
+        "merged": "com.mzansi.campushub.app-debug-31:/layout_activity_register.xml.flat",
+        "source": "com.mzansi.campushub.app-main-33:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.mzansi.campushub.app-debug-31:/layout_item_campus_event.xml.flat",
+        "source": "com.mzansi.campushub.app-main-33:/layout/item_campus_event.xml"
+    },
+    {
+        "merged": "com.mzansi.campushub.app-debug-31:/drawable_event_sports.jpg.flat",
+        "source": "com.mzansi.campushub.app-main-33:/drawable/event_sports.jpg"
+    }
+]
