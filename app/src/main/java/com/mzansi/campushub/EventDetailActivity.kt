@@ -1,84 +1,79 @@
 package com.mzansi.campushub
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.CalendarContract
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 
-/**
- * Displays the full details (title, date, description) of a single campus
- * event that the user tapped on the events feed in [MainActivity].
- *
- * The event's fields are passed as individual String Intent extras rather
- * than a serialized object, keyed by [EXTRA_EVENT_TITLE], [EXTRA_EVENT_DATE]
- * and [EXTRA_EVENT_DESCRIPTION]. Extraction also falls back to a set of
- * shorter/alternate key names (e.g. "title") so this screen keeps working
- * if it's ever launched from another entry point that used those instead.
- */
 class EventDetailActivity : BaseActivity() {
 
     companion object {
-        const val EXTRA_EVENT_TITLE = "EVENT_TITLE"
-        const val EXTRA_EVENT_DATE = "EVENT_DATE"
-        const val EXTRA_EVENT_DESCRIPTION = "EVENT_DESCRIPTION"
-
-        // Alternate/fallback keys accepted for backwards compatibility.
-        private val TITLE_FALLBACK_KEYS = listOf("title", "event_title")
-        private val DATE_FALLBACK_KEYS = listOf("date", "event_date")
-        private val DESCRIPTION_FALLBACK_KEYS = listOf("description", "event_description")
+        const val EXTRA_EVENT_TITLE = "extra_event_title"
+        const val EXTRA_EVENT_DATE = "extra_event_date"
+        const val EXTRA_EVENT_DESCRIPTION = "extra_event_description"
     }
-
-    private lateinit var tvDetailHeader: TextView
-    private lateinit var tvDetailTitle: TextView
-    private lateinit var tvDetailDate: TextView
-    private lateinit var tvDetailDescription: TextView
-    private lateinit var btnBack: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event_detail)
 
-        tvDetailHeader = findViewById<TextView>(R.id.tvDetailHeader)
-        tvDetailTitle = findViewById<TextView>(R.id.tvDetailTitle)
-        tvDetailDate = findViewById<TextView>(R.id.tvDetailDate)
-        tvDetailDescription = findViewById<TextView>(R.id.tvDetailDescription)
-        btnBack = findViewById<Button>(R.id.btnBack)
+        val detailImage = findViewById<ImageView>(R.id.detailImage)
+        val tvTitle = findViewById<TextView>(R.id.tvDetailTitle)
+        val tvDate = findViewById<TextView>(R.id.tvDetailDate)
+        val tvDescription = findViewById<TextView>(R.id.tvDetailDescription)
+        val btnRsvp = findViewById<Button>(R.id.btnRsvp)
+        val btnCalendar = findViewById<Button>(R.id.btnCalendar)
+        val btnBack = findViewById<Button>(R.id.btnBack)
 
-        val title = extractExtra(EXTRA_EVENT_TITLE, TITLE_FALLBACK_KEYS)
-        val date = extractExtra(EXTRA_EVENT_DATE, DATE_FALLBACK_KEYS)
-        val description = extractExtra(EXTRA_EVENT_DESCRIPTION, DESCRIPTION_FALLBACK_KEYS)
+        val title = intent.getStringExtra(EXTRA_EVENT_TITLE) ?: "Event Title"
+        val date = intent.getStringExtra(EXTRA_EVENT_DATE) ?: "2026-10-15"
+        val description = intent.getStringExtra(EXTRA_EVENT_DESCRIPTION) ?: "No description available."
 
-        if (title.isNullOrBlank() && date.isNullOrBlank() && description.isNullOrBlank()) {
+        tvTitle.text = title
+        tvDate.text = date
+        tvDescription.text = description
 
-            finish()
-            return
+        // Correct image mapping for all events including Spring Bash
+        val imageResId = when {
+            title.contains("Hackathon", ignoreCase = true) -> R.drawable.event_hackathon
+            title.contains("Career", ignoreCase = true) -> R.drawable.event_career
+            else -> R.drawable.event_party
+        }
+        detailImage.setImageResource(imageResId)
+
+        // RSVP feature with persistence
+        val prefs = getSharedPreferences("RsvpPrefs", MODE_PRIVATE)
+        val isRsvped = prefs.getBoolean(title, false)
+        if (isRsvped) {
+            btnRsvp.text = "✓ You are Attending"
         }
 
-        bindEvent(title, date, description)
+        btnRsvp.setOnClickListener {
+            prefs.edit().putBoolean(title, true).apply()
+            btnRsvp.text = "✓ You are Attending"
+            Toast.makeText(this, "RSVP Confirmed for $title!", Toast.LENGTH_SHORT).show()
+        }
+
+        // Native Calendar Reminder Intent
+        btnCalendar.setOnClickListener {
+            val intent = Intent(Intent.ACTION_INSERT).apply {
+                data = CalendarContract.Events.CONTENT_URI
+                putExtra(CalendarContract.Events.TITLE, title)
+                putExtra(CalendarContract.Events.DESCRIPTION, description)
+                putExtra(CalendarContract.Events.EVENT_LOCATION, "Mzansi Campus Main Quad")
+            }
+            if (intent.resolveActivity(packageManager) != null) {
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Calendar app not available.", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         btnBack.setOnClickListener {
             finish()
         }
-    }
-
-    private fun bindEvent(title: String?, date: String?, description: String?) {
-        tvDetailTitle.text = title.orEmpty()
-        tvDetailDate.text = date.orEmpty()
-        tvDetailDescription.text = description.orEmpty()
-    }
-
-    /**
-     * Reads a String extra from [getIntent], trying [primaryKey] first and
-     * then each key in [fallbackKeys] in order, so the screen tolerates
-     * callers that used a slightly different naming convention.
-     */
-    private fun extractExtra(primaryKey: String, fallbackKeys: List<String>): String? {
-        intent.getStringExtra(primaryKey)?.let { return it }
-
-        for (fallbackKey in fallbackKeys) {
-            intent.getStringExtra(fallbackKey)?.let { return it }
-        }
-
-        return null
     }
 }

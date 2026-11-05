@@ -16,14 +16,13 @@
         android:orientation="horizontal"
         android:padding="12dp">
 
-        <!-- Event Image / Icon Thumbnail -->
         <ImageView
             android:id="@+id/eventThumbnail"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_gravity="center_vertical"
-            android:background="@drawable/ic_launcher_foreground"
-            android:backgroundTint="@color/primary"
+            android:background="@android:drawable/ic_menu_compass"
+            android:backgroundTint="@color/secondary"
             android:scaleType="centerCrop"
             android:contentDescription="Event Image" />
 
@@ -34,7 +33,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/eventTitle"
+                android:id="@+id/tvEventTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Campus Hackathon 2026"
@@ -43,7 +42,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/eventDate"
+                android:id="@+id/tvEventDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
@@ -53,7 +52,7 @@
                 android:textStyle="italic" />
 
             <TextView
-                android:id="@+id/eventDescription"
+                android:id="@+id/tvEventDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"

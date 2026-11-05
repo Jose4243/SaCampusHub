@@ -20,7 +20,7 @@ class MainActivity : BaseActivity() {
     }
 
     private lateinit var tvFeedHeader: TextView
-    private lateinit var btnSettings: Button
+    private lateinit var btnSettings: TextView
     private lateinit var tvFeedStatus: TextView
     private lateinit var rvCampusEvents: RecyclerView
     private lateinit var btnLogout: Button
@@ -91,7 +91,7 @@ class MainActivity : BaseActivity() {
                     }
                 } else {
                     val errorBody = response.errorBody()?.string()
-                    Log.e(TAG, "Failed to load events: HTTP ${response.code()} - $errorBody")
+                    Log.e(TAG, "Failed to load events: HTTP ${response.code()} $errorBody")
                     tvFeedStatus.text = "Server error ${response.code()} while loading events."
                     Toast.makeText(
                         this@MainActivity,
